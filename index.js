@@ -61,7 +61,7 @@ app.post('/sprint', function(req, res) {
     response_text = getSprints(sender, 'Your sprint(s): ');
   }
   else if (sent_text == 'help') {
-    response_text = 'Type `/sprint` to get your own sprint, or `/sprint @<username> to get a teammate\'s!`';
+    response_text = 'Type `/sprint` to get your own sprint, or `/sprint @<username>` to get a teammate\'s!';
     response_type = 'ephemeral';
   }
   else if (sent_text.slice(1) in sprint_keys) {
