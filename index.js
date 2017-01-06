@@ -18,6 +18,8 @@ app.post('/sprint', function(req, res) {
     return res.status(401).send('Unauthorized');
   }
 
+  console.log('Sprint request made!')
+
   var message = 'hey!';
 
   if (req.body.text == 'help') {
