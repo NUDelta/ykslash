@@ -24,13 +24,13 @@ var user_ids = {};
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-function getSprints(username) {
+function getSprints(username, base_response) {
   var response_text;
 
   if (username in sprint_keys) {
     var urls = sprint_keys[username];
 
-    response_text = 'Your sprint(s): ';
+    response_text = base_response;
     for (var sprint in urls) {
       response_text += 'http://drive.google.com/open?id=' + urls[sprint] + '\n';
     }
@@ -58,14 +58,14 @@ app.post('/sprint', function(req, res) {
   var response_type = 'in_channel';
 
   if (sent_text == '') {
-    response_text = getSprints(sender);
+    response_text = getSprints(sender, 'Your sprint(s): ');
   }
   else if (sent_text == 'help') {
     response_text = 'Type `/sprint` to get your own sprint, or `/sprint @<username> to get a teammates!`';
     response_type = 'ephemeral';
   }
   else if (sent_text.slice(1) in sprint_keys) {
-    response_text = getSprints(sent_text.slice(1));
+    response_text = getSprints(sent_text.slice(1), sent_text + "'s sprint(s): ");
   }
   else {
     console.log(sent_text);
