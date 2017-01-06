@@ -55,12 +55,14 @@ app.post('/sprint', function(req, res) {
   var sent_text = req.body.text;
   var sender = req.body.user_name;
   var response_text;
+  var response_type = 'in_channel';
 
   if (sent_text == '') {
     response_text = getSprints(sender);
   }
   else if (sent_text == 'help') {
     response_text = 'Type `/sprint` to get your own sprint, or `/sprint @<username> to get a teammates!`';
+    response_type = 'ephemeral';
   }
   else if (sent_text.slice(1) in sprint_keys) {
     response_text = getSprints(sent_text.slice(1));
@@ -72,7 +74,7 @@ app.post('/sprint', function(req, res) {
 
   res.status(200).send(Object.assign(stella_response, {
     text: response_text,
-    response_type: 'in_channel',
+    response_type: response_type,
   }));
 });
 
