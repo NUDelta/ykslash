@@ -8,7 +8,7 @@ module.exports = {
   "kaldjian": ["1IFUFtqg62tVDPvV3Mk8KMxdmLRZUt0PICznOoIJ0IRc"],
   "alaina": ["13Kdm9RcrYX-dtLGUyn2MZmJ_3f6uBCeeq30wudE2qfk"],
   "kapil": ["11KYuPgVnLglVJP8b5k_diG3SO0TtgR87_f3tShqeejw"],
-  "sasha": ["1IH5T2wNgZE_1wqfjjcnyPBbnxNef_74_Bsr1Q058cj0"],
+  "npr": ["1IH5T2wNgZE_1wqfjjcnyPBbnxNef_74_Bsr1Q058cj0"],
   "yk": ["1_2FAB4g_q18Uv9Vbde84zkRXIwNxlld_FAEaPi1Kv5s"],
   "gracealex": ["1xXEcxNYbc1qj6hlcxfaKDunRRh6CvILOgCjryWkknYs"],
   "lszhang": ["1xXEcxNYbc1qj6hlcxfaKDunRRh6CvILOgCjryWkknYs"],
